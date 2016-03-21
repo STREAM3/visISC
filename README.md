@@ -13,6 +13,7 @@ Install Mayavi and wxPython (version 2.8.1 is preferred, otherwise if it does no
 `>> pip install SQLAlchemy pymssql`
 
 ##Installation
+`>> git clode https://github.com/STREAM3/visisc`
 
 `>> cd visisc`
 
