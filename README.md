@@ -3,7 +3,7 @@ A visualisation library for event data anaylised using the pyISC anomaly detecti
 
 ##Prerequisite
 
-Install pyisc (including all requirements) : https://github.com/STREAM3/pyisc/
+Install pyisc (including all prerequisite) : https://github.com/STREAM3/pyisc/
 
 Install Mayavi and wxPython (version 2.8.1 is preferred, otherwise if it does not exists as for Mac OS X choose 3.0)
 
