@@ -24,3 +24,5 @@ Install Mayavi and wxPython (version 2.8.1 is preferred, otherwise if it does no
 `>> cd docs`
 
 `>> jupyter notebook`
+
+Click on `visISC_tutorial.ipynb`
