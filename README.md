@@ -8,7 +8,7 @@ Install pyisc (including all prerequisites) : https://github.com/STREAM3/pyisc/
 Install Mayavi and wxPython (version 2.8.1 is preferred, otherwise if it does not exists as for Mac OS X choose 3.0)
 
 Windows:
-`>> conda install --channel https://conda.anaconda.org/krisvanneste wxpython=2.8.12`
+`>> conda install --channel https://conda.anaconda.org/krisvanneste wxpython==2.8.12`
 
 Other:
 `>> conda install wxpython`
