@@ -7,7 +7,15 @@ Install pyisc (including all prerequisites) : https://github.com/STREAM3/pyisc/
 
 Install Mayavi and wxPython (version 2.8.1 is preferred, otherwise if it does not exists as for Mac OS X choose 3.0)
 
-`>> conda install mayavi wxpython wxpython==2.8.12`
+Windows:
+`>> conda install --channel https://conda.anaconda.org/krisvanneste wxpython`
+
+Other:
+`>> conda install wxpython`
+
+All:
+
+`>> conda install mayavi`
 
 [Optional: SQL support]
 `>> pip install SQLAlchemy pymssql`
