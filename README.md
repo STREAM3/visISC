@@ -14,7 +14,13 @@ Other:
 `>> conda install wxpython`
 
 All:
+
 `>> conda install mayavi`
+
+To undo the downgrading of the numpy libraries in previous step:
+
+`>> conda install numpy`
+
 
 ##Installation
 `>> git clone https://github.com/STREAM3/visisc`
