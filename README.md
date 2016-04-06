@@ -14,11 +14,7 @@ Other:
 `>> conda install wxpython`
 
 All:
-
 `>> conda install mayavi`
-
-[Optional: SQL support]
-`>> pip install SQLAlchemy pymssql`
 
 ##Installation
 `>> git clone https://github.com/STREAM3/visisc`
