@@ -1,5 +1,5 @@
 # visisc
-A visualisation library for event data anaylised using the pyISC anomaly detection framework.
+A visualisation library for event data analysed using the pyISC anomaly detection framework.
 
 ##Prerequisite
 
