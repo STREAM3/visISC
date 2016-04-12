@@ -19,10 +19,7 @@ All:
 
 `>> conda install mayavi`
 
-To undo the downgrading of the numpy libraries in previous step:
-
-`>> conda install numpy`
-
+Notice: The latest version (4.0.5) of Anaconda is more restrictive to conflicting library version so that when installing Mayavi (version 4.4), numpy is most likly downgraded to 1.9.3 and cannot be upgraded again. In that case, if you not already downgraded numpy before installing pyISC, you have to reinstall pyISC after installing Mayavi. 
 
 ##Installation
 `>> git clone https://github.com/STREAM3/visisc`
@@ -37,4 +34,4 @@ To undo the downgrading of the numpy libraries in previous step:
 
 `>> jupyter notebook visISC_tutorial.ipynb`
 
-If not opened automatically, click  on `visISC_tutorial.ipynb` in the web page that was opened in a web browser.
+If not opened automatically, click  on `visISC_tutorial.ipynb` in the web page that was opened in the web browser.
