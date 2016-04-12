@@ -19,7 +19,7 @@ All:
 
 `>> conda install mayavi`
 
-Notice: The latest version (4.0.5) of Anaconda is more restrictive to conflicting library version so that when installing Mayavi (version 4.4), numpy is most likly downgraded to 1.9.3 and cannot be upgraded again. In that case, if you not already downgraded numpy before installing pyISC, you have to reinstall pyISC after installing Mayavi. 
+*Notice*: The latest version (4.0.5) of Anaconda is more restrictive to conflicting library versions. Thus, when installing Mayavi (version 4.4), numpy is most likly downgraded to 1.9.3 and cannot be upgraded again. If you have not already downgraded numpy before installing pyISC, you have to reinstall pyISC after installing Mayavi. 
 
 ##Installation
 `>> git clone https://github.com/STREAM3/visisc`
