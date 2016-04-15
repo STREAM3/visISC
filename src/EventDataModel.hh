@@ -16,7 +16,6 @@
 #include <intfloat.hh>
 #include <_Format.hh>
 #include <_DataObject.hh>
-#include <isc_micromodel.hh>
 #include <_AnomalyDetector.hh>
 #include <string.h>
 

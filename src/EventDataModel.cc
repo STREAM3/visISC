@@ -8,9 +8,6 @@
  */
 
 #include "EventDataModel.hh"
-#include <isc_micromodel_gaussian.hh>
-#include <isc_micromodel_poissongamma.hh>
-#include <IscPoissonMicroModelOneside.hh>
 
 int visisc::num_of_severity_levels = 5;
 void visisc::set_global_num_of_severity_levels(int num_sev_levels) {num_of_severity_levels = num_sev_levels;};
