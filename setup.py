@@ -44,9 +44,13 @@ if "uninstall" in sys.argv:
             print "removing "+file
     sys.exit()
 
-isc_src_dir = os.path.join('..',os.path.join('pyisc','isc2'))
-dataformat_src_dir = os.path.join('..',os.path.join('pyisc','dataformat'))
-pyisc_src_dir = os.path.join('..', os.path.join('pyisc','src'))
+pyisc_path = raw_input("Name and location of the pyisc directory ["+str(os.path.join('..', 'pyisc'))+"]:")
+if pyisc_path == "":
+    pyisc_path = str(os.path.join('..', 'pyisc'))
+
+isc_src_dir = os.path.join(pyisc_path,'isc2')
+dataformat_src_dir = os.path.join(pyisc_path,'dataformat')
+pyisc_src_dir = os.path.join(pyisc_path,'src')
 
 if sys.platform  == 'darwin':
     extra_flags = ["-DPLATFORM_MAC"]
