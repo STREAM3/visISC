@@ -1,7 +1,10 @@
 # visisc
 A visualisation library for event data analysed using the pyISC anomaly detection framework.
 
+
 ##Prerequisite
+
+Notice, pyISC/visISC is only been tested on 64 bits machines.
 
 Install pyisc (including all prerequisites) : https://github.com/STREAM3/pyisc/
 
@@ -19,7 +22,10 @@ All:
 
 `>> conda install mayavi`
 
+
 *Notice*: The latest version (4.0.5) of Anaconda is more restrictive to conflicting library versions. Thus, when installing Mayavi (version 4.4), numpy is most likly downgraded to 1.9.3 and cannot be upgraded again. If you have not already downgraded numpy before installing pyISC, you have to reinstall pyISC after installing Mayavi. 
+
+>>>>>>> Stashed changes
 
 ##Installation
 `>> git clone https://github.com/STREAM3/visisc`
