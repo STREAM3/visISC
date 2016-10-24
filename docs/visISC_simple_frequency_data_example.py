@@ -102,7 +102,7 @@ anomaly_detector = model.fit_anomaly_detector(data_object, poisson_onesided=True
 
 # <b>Finally, we can viualize the event frequency data using the Visualization class. However, due to a bug in the underlying 3D egnine, we have to run the notebook as a script:</b>
 
-vis = visisc.EventVisualization(model, 13.8,start_day=209)
+vis = visisc.EventVisualization(model, 13.8,start_day=209, precompute_cache=True)
 
 
 
