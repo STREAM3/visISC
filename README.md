@@ -18,14 +18,11 @@ Install Mayavi and wxPython (version 2.8.1 is preferred, otherwise if it does no
 
 Windows:
 `>> conda install --channel https://conda.anaconda.org/krisvanneste wxpython==2.8.12`
->>>>>>> origin/master
 
 `>> conda install mayavi wxpython ipython=4.2 numpy=1.9.3 pandas matplotlib`
 
 
 *Notice*: The latest version (4.0.5) of Anaconda is more restrictive to conflicting library versions. Thus, when installing Mayavi (version 4.4), numpy is most likly downgraded to 1.9.3 and cannot be upgraded again. If you have not already downgraded numpy before installing pyISC, you have to reinstall pyISC after installing Mayavi. 
-
->>>>>>> Stashed changes
 
 ##Installation
 `>> git clone https://github.com/STREAM3/visisc`
