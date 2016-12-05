@@ -12,8 +12,6 @@ Notice, pyisc must be placed in the same folder as visisc so that visisc can fin
 
 Install Mayavi and wxPython (version 2.8.1 is preferred, otherwise if it does not exists as for Mac OS X choose 3.0)
 
-<<<<<<< HEAD
-=======
 (If you want to disable ssl verification when installing, you will find the instructions <a href="https://docs.continuum.io/anaconda-repository/faq#how-do-i-disable-ssl-checking-on-package-installation">here</a>.)
 
 Windows:
