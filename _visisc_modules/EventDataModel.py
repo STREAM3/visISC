@@ -217,7 +217,7 @@ class EventDataModel(_EventDataModel):
                                                    for i in xrange(self.num_of_event_columns)
                                                    ])
 
-        self._anomaly_detector = anomaly_detector.fit(data_object, y=self.class_column)
+        self._anomaly_detector = anomaly_detector.fit(data_object)
 
         return anomaly_detector
 
