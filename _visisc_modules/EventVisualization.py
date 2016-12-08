@@ -508,7 +508,7 @@ class EventVisualization(HasTraits):
 
                     self._cache[data_index] = (devsptr, sevs, expectptr, min2, max2, None)
 
-                ztime = self._num_of_shown_days_to_int()-(self.current_time-self._data_times[data_index]).days
+                ztime = self._num_of_shown_days_to_int()-(datetools.to_datetime(self.current_time)-self._data_times[data_index]).days
 
 
                 if self._vis_model.get_num_of_selected_events() > 0:
