@@ -530,8 +530,10 @@ class EventVisualization(HasTraits):
 
         self.scene.disable_render = True
 
+        datetime.date
+
         curr_t = self.current_time
-        time_strs = [str(t)for t in date_range(curr_t-self._num_of_shown_days_to_timedelta(), curr_t)]
+        time_strs = [str(t.date())for t in date_range(curr_t-self._num_of_shown_days_to_timedelta(), curr_t)]
         time_max_len = min([len(t) for t in time_strs])
 
         max_x = (self._num_of_sources if self.selected_source is None else  self._vis_model.get_num_of_selected_events())
