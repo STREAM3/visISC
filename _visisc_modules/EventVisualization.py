@@ -337,8 +337,14 @@ class EventVisualization(HasTraits):
 
         self.picker.tolerance = 0.01
 
-        cmap = matplotlib.cm.get_cmap('Reds')
-        self.severity_color = [cmap(x)[:-1] for x in linspace(0.75, 0.95, self._vis_model.num_of_severity_levels_)]
+        #cmap = matplotlib.cm.get_cmap('Reds')
+        #self.severity_color = [cmap(x)[:-1] for x in linspace(0.75, 0.95, self._vis_model.num_of_severity_levels_)]
+
+        if self._vis_model.num_of_severity_levels_ > 1:
+            self.severity_color = [(153.0/255, i/255.0, i/255.0) for i in range(103,51,-51/(self._vis_model.num_of_severity_levels_)-1)]
+        else:
+            self.severity_color = [(153.0 / 255, 51 / 255.0, 51 / 255.0)]
+
 
         # This used for a fix to manage a bug in Mayavi library, an invisible default object
         self._obj = self.scene.mlab.points3d(0, 0, 0, opacity=0.0)
