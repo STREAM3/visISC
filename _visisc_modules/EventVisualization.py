@@ -571,7 +571,7 @@ class EventVisualization(HasTraits):
                 if self.selected_source is None:
                     self.source_text3ds.append(self.scene.mlab.text3d(source, max_y + 0.5, 0, name, scale=0.6, color=self.textcolor, orient_to_camera=False, orientation=(0, 0, 90)))
                 else:
-                    self.source_text3ds.append(self.scene.mlab.text3d(source, max_y + 0.5, 0, name, color=self.textcolor if source < self.selected_event else (0, 0, self.textcolor[-1]*0.8) if source > self.selected_event else (0, 0,  self.textcolor[-1]), scale=0.5, orient_to_camera=False, orientation=(0, 0, 90)))
+                    self.source_text3ds.append(self.scene.mlab.text3d(source, max_y + 0.5, 0, name, color=self.textcolor if source < self.selected_event else (192.0/255, 192.0/255, 192.0/255) if source > self.selected_event else (0, 0,  0), scale=0.5, orient_to_camera=False, orientation=(0, 0, 90)))
         else:
             for source in range(num_of_sources):
                 name = source_strs[source]
