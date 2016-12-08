@@ -104,7 +104,7 @@ class EventVisualization(HasTraits):
 
 
     ## Buttons for controlling the visualization
-    _home_button = Button("All>>", width_padding=0, height_padding=0)
+    _home_button = Button("View All>>", width_padding=0, height_padding=0)
     _back1 = Button("<", width_padding=0, height_padding=0)
     _forward1 = Button(">", width_padding=0, height_padding=0)
 
