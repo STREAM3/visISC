@@ -41,7 +41,7 @@ __author__ = 'tol'
 class EventVisualization(HasTraits):
     background = (0,0,0)
     normal_barcolor = (153.0/255,204.0/255,255.0/255)
-    textcolor = (1,1,1)
+    textcolor = normal_barcolor
 
 
     scene = Instance(MlabSceneModel, ())
@@ -334,7 +334,7 @@ class EventVisualization(HasTraits):
 
         self.picker.tolerance = 0.01
 
-        self.severity_color = [(1,x/100.0, x/100.0) for x in range(70, 30, -40/self._vis_model.num_of_severity_levels_)]
+        self.severity_color = [(1,x/100.0, x/100.0) for x in range(100, 60, -40/self._vis_model.num_of_severity_levels_)]
 
         # This used for a fix to manage a bug in Mayavi library, an invisible default object
         self._obj = self.scene.mlab.points3d(0, 0, 0, opacity=0.0)
@@ -441,7 +441,7 @@ class EventVisualization(HasTraits):
 
         max_z = 0
 
-        time_index = ((self._data_times <= self.current_time) &
+        time_index = ((self._data_times <= datetools.to_datetime(self.current_time)) &
                       (self._data_times >= (datetools.to_datetime(self.current_time) - self._num_of_shown_days_to_timedelta())))
 
         if self.selected_source is None: # Plot all sources
