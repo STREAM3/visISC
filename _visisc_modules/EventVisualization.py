@@ -7,6 +7,8 @@
 import logging
 
 import datetime
+
+import matplotlib
 from pandas.core import datetools
 from pandas.tseries.index import date_range
 from pyface.gui import GUI
@@ -335,7 +337,8 @@ class EventVisualization(HasTraits):
 
         self.picker.tolerance = 0.01
 
-        self.severity_color = [(1,x/100.0, x/100.0) for x in range(100, 60, -40/self._vis_model.num_of_severity_levels_)]
+        cmap = matplotlib.cm.get_cmap('Reds')
+        self.severity_color = [cmap(x/100.0)[:-1] for x in range(0, 50, 50/self._vis_model.num_of_severity_levels_)]
 
         # This used for a fix to manage a bug in Mayavi library, an invisible default object
         self._obj = self.scene.mlab.points3d(0, 0, 0, opacity=0.0)
@@ -571,7 +574,7 @@ class EventVisualization(HasTraits):
                 if self.selected_source is None:
                     self.source_text3ds.append(self.scene.mlab.text3d(source, max_y + 0.5, 0, name, scale=0.6, color=self.textcolor, orient_to_camera=False, orientation=(0, 0, 90)))
                 else:
-                    self.source_text3ds.append(self.scene.mlab.text3d(source, max_y + 0.5, 0, name, color=self.textcolor if source < self.selected_event else (192.0/255, 192.0/255, 192.0/255) if source > self.selected_event else (0, 0,  0), scale=0.5, orient_to_camera=False, orientation=(0, 0, 90)))
+                    self.source_text3ds.append(self.scene.mlab.text3d(source, max_y + 0.5, 0, name, color=self.textcolor if source < self.selected_event else (192.0/255, 192.0/255, 192.0/255) if source > self.selected_event else (1.0, 1.0,  1.0), scale=0.5, orient_to_camera=False, orientation=(0, 0, 90)))
         else:
             for source in range(num_of_sources):
                 name = source_strs[source]
