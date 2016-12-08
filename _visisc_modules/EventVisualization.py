@@ -104,7 +104,8 @@ class EventVisualization(HasTraits):
 
 
     ## Buttons for controlling the visualization
-    _home_button = Button("None>>", width_padding=0, height_padding=0)
+
+    _home_button = Button("Unselect>>", width_padding=0, height_padding=0)
     _back1 = Button("<", width_padding=0, height_padding=0)
     _forward1 = Button(">", width_padding=0, height_padding=0)
 
@@ -118,8 +119,7 @@ class EventVisualization(HasTraits):
     # Home button, unselects any selection
 
     def __home_button_changed(self):
-        selected_source = None
-
+        self.selected_source = None
 
     _last_clicked_direction = None
     def move_backward(self):
