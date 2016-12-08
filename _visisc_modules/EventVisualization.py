@@ -26,7 +26,7 @@ from mayavi.tools.mlab_scene_model import \
     MlabSceneModel
 from mayavi.core.ui.mayavi_scene import MayaviScene
 
-from numpy import array, min, max, median, argmax, unique
+from numpy import array, min, max, median, argmax, unique, linspace
 
 import pyisc
 from visisc import EventDataModel
@@ -338,7 +338,7 @@ class EventVisualization(HasTraits):
         self.picker.tolerance = 0.01
 
         cmap = matplotlib.cm.get_cmap('Reds')
-        self.severity_color = [cmap(x/100.0)[:-1] for x in range(0, 50, 50/self._vis_model.num_of_severity_levels_)]
+        self.severity_color = [cmap(x)[:-1] for x in linspace(0.8, 1, self._vis_model.num_of_severity_levels_)]
 
         # This used for a fix to manage a bug in Mayavi library, an invisible default object
         self._obj = self.scene.mlab.points3d(0, 0, 0, opacity=0.0)
