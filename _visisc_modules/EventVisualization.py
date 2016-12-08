@@ -39,13 +39,19 @@ logging.getLogger("mayavi.core.common").addHandler(h)
 __author__ = 'tol'
 
 class EventVisualization(HasTraits):
+    background = (0,0,0)
+    normal_barcolor = (153.0/255,204.0/255,255.0/255)
+    textcolor = (1,1,1)
+
 
     scene = Instance(MlabSceneModel, ())
 
     def default_traits_view(self):
         view = View(
             Item('scene', editor=SceneEditor(scene_class=MayaviScene),
-                 height=600, width=600, show_label=False),
+                 height=600, width=600, show_label=False,
+                 background=self.background
+                 ),
             HGroup(
                 Item("current_time", label="Date"),
                 Item(" "),
@@ -94,9 +100,6 @@ class EventVisualization(HasTraits):
         "180 days",
         "365 days"
     ]))
-
-
-
 
 
     ## Buttons for controlling the visualization
@@ -365,7 +368,7 @@ class EventVisualization(HasTraits):
 
         for s in set(severities):
             s_index = (severities == s)
-            color = (1.0, 1.0, 1.0) if s == -1 else (0,0,0) if s == -2 else self.severity_color[s]
+            color = self.normal_barcolor if s == -1 else self.background if s == -2 else self.severity_color[s]
             x0 = x[s_index]
             y0 = y[s_index]
             z0 = z[s_index]
@@ -541,7 +544,7 @@ class EventVisualization(HasTraits):
             for slot in range(len(time_strs)):
                 name = time_strs[slot]
                 pos = (max_x+time_max_len/2-1, slot, 0)
-                self.time_text3ds.append(self.scene.mlab.text3d(*pos, text=name, scale=0.5, color=(0, 0, 0), orient_to_camera=False, orientation=(180, 180, 0)))
+                self.time_text3ds.append(self.scene.mlab.text3d(*pos, text=name, scale=0.5, color=self.textcolor, orient_to_camera=False, orientation=(180, 180, 0)))
         else:
             for slot in range(len(time_strs)):
                 name = time_strs[slot]
@@ -563,9 +566,9 @@ class EventVisualization(HasTraits):
             for source in range(num_of_sources):
                 name = source_strs[source]
                 if self.selected_source is None:
-                    self.source_text3ds.append(self.scene.mlab.text3d(source, max_y + 0.5, 0, name, scale=0.6, color=(0, 0, 0), orient_to_camera=False, orientation=(0, 0, 90)))
+                    self.source_text3ds.append(self.scene.mlab.text3d(source, max_y + 0.5, 0, name, scale=0.6, color=self.textcolor, orient_to_camera=False, orientation=(0, 0, 90)))
                 else:
-                    self.source_text3ds.append(self.scene.mlab.text3d(source, max_y + 0.5, 0, name, color=(0, 0, 0) if source < self.selected_event else (0, 0, 0.8) if source > self.selected_event else (0, 0, 1), scale=0.5, orient_to_camera=False, orientation=(0, 0, 90)))
+                    self.source_text3ds.append(self.scene.mlab.text3d(source, max_y + 0.5, 0, name, color=self.textcolor if source < self.selected_event else (0, 0, self.textcolor[-1]*0.8) if source > self.selected_event else (0, 0,  self.textcolor[-1]), scale=0.5, orient_to_camera=False, orientation=(0, 0, 90)))
         else:
             for source in range(num_of_sources):
                 name = source_strs[source]
