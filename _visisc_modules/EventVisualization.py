@@ -341,9 +341,9 @@ class EventVisualization(HasTraits):
         #self.severity_color = [cmap(x)[:-1] for x in linspace(0.75, 0.95, self._vis_model.num_of_severity_levels_)]
 
         if self._vis_model.num_of_severity_levels_ > 1:
-            self.severity_color = [(153.0/255, i/255.0, i/255.0) for i in range(103,51,-51/(self._vis_model.num_of_severity_levels_)-1)]
+            self.severity_color = self.severity_color = [(1,x/100.0, x/100.0) for x in range(70, 30, -40/self._vis_model.num_of_severity_levels_)]
         else:
-            self.severity_color = [(153.0 / 255, 51 / 255.0, 51 / 255.0)]
+            self.severity_color = [(255.0 / 255, 51 / 255.0, 51 / 255.0)]
 
 
         # This used for a fix to manage a bug in Mayavi library, an invisible default object
