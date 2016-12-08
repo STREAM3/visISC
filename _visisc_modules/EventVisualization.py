@@ -221,6 +221,7 @@ class EventVisualization(HasTraits):
         if self.Relative_Start_Day != num_of_days:
             self.Relative_Start_Day = num_of_days
         elif old_time != new_time:
+            self.current_time = datetools.to_datetime(self.current_time)
             self.update()
 
 
