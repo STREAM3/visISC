@@ -49,9 +49,7 @@ class EventVisualization(HasTraits):
     def default_traits_view(self):
         view = View(
             Item('scene', editor=SceneEditor(scene_class=MayaviScene),
-                 height=600, width=600, show_label=False,
-                 background=self.background
-                 ),
+                 height=600, width=600, show_label=False),
             HGroup(
                 Item("current_time", label="Date"),
                 Item(" "),
@@ -328,6 +326,8 @@ class EventVisualization(HasTraits):
         self.add_trait("_selected_source_name", Enum(None,[None]+self.source_names))
 
         self.configure_traits()
+
+        self.scene.background =self.background
 
         # add the mouse pick handler
         self.picker = self.scene.mayavi_scene.on_mouse_pick(self.vis_picker, 'cell')
