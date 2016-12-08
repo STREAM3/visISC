@@ -56,7 +56,8 @@ class EventVisualization(HasTraits):
                 Item("current_time", label="Date"),
                 Item(" "),
                 Item("num_of_shown_days", label="Show"),
-                Item("_selected_source_name", label="Selection"),
+                Item("_home_button", show_label=False)
+                Item("_selected_source_name", show_label=False),
                 Item("_selected_event_name", editor=CheckListEditor(name='_selected_events_list'), show_label=False),
 
                 Item("_back1", show_label=False),
@@ -103,6 +104,7 @@ class EventVisualization(HasTraits):
 
 
     ## Buttons for controlling the visualization
+    _home_button = Button("Home", width_padding=0, height_padding=0)
     _back1 = Button("<", width_padding=0, height_padding=0)
     _forward1 = Button(">", width_padding=0, height_padding=0)
 
@@ -112,6 +114,12 @@ class EventVisualization(HasTraits):
 
     # Configure the number of days the visualization can step.
     move_step = Trait("1 day", Enum(["1 day","2 days","3 days", "7 days"]))
+
+    # Home button, unselects any selection
+
+    def _home_button_changed(self):
+        selected_source = None
+        
 
     _last_clicked_direction = None
     def move_backward(self):
