@@ -642,7 +642,6 @@ class EventVisualization(HasTraits):
     def _num_of_shown_days_to_int(self):
         return int(str(self.num_of_shown_days).split(' ')[0])
 
-
     def _get_source_name(self,source):
         return self.source_names[source]
 
