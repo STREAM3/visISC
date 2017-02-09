@@ -14,12 +14,15 @@ Install Mayavi and wxPython (version 2.8.1 is preferred, otherwise if it does no
 
 (If you want to disable ssl verification when installing, you will find the instructions <a href="https://docs.continuum.io/anaconda-repository/faq#how-do-i-disable-ssl-checking-on-package-installation">here</a>.)
 
+Install the pandas library:
+
 `>> conda install pandas`
 
 Windows:
 `>> conda install --channel https://conda.anaconda.org/krisvanneste wxpython==2.8.12`
 
-`>> conda install mayavi wxpython ipython=4.2 numpy=1.9.3 pandas matplotlib`
+All:
+`>> conda install mayavi=4.4 wxpython ipython=4.2 numpy=1.9.3 pandas matplotlib`
 
 
 *Notice*: The latest version (4.0.5) of Anaconda is more restrictive to conflicting library versions. Thus, when installing Mayavi (version 4.4), numpy is most likly downgraded to 1.9.3 and cannot be upgraded again. If you have not already downgraded numpy before installing pyISC, you have to reinstall pyISC after installing Mayavi. 
