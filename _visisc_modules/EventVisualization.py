@@ -10,7 +10,7 @@ import datetime
 
 import matplotlib
 from pandas.core import datetools
-from pandas.tseries.index import date_range
+from pandas import date_range
 from pyface.gui import GUI
 from traits.api import HasTraits, Instance
 from traits.has_traits import on_trait_change
